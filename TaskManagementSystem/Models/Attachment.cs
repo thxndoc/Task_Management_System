@@ -9,6 +9,6 @@
         public string FilePath { get; set; }
         public string FileType { get; set; }
         public long FileSize { get; set; } // size in bytes
-        public string UploadedDate { get; set; }
+        public DateTime UploadedDate { get; set; }
     }
 }
