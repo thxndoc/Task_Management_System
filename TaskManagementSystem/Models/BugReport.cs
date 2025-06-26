@@ -2,7 +2,7 @@
 {
     public class BugReport
     {
-        public int BugId { get; set; }
+        public int BugReportId { get; set; }
         public int TaskId { get; set; }
         public string ReportedBy { get; set; }
         public string Description { get; set; }

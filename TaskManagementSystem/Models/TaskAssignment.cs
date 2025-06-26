@@ -1,12 +1,13 @@
 ﻿namespace TaskManagementSystem.Models
 {
-    public class ProjectReport
+    public class TaskAssignment
     {
-        public int ProjectReportId { get; set; }
-        public int ProjectId { get; set; }
+        public int TaskAssignmentId { get; set; }
         public int TaskId { get; set; }
         public int UserId { get; set; }
-        public DateTime ReportDate { get; set; }
-        public required string Status { get; set; }
+        public DateTime AssignedDate { get; set; }
+        public DateTime CompletedDate { get; set; }
+        public string Notes { get; set; }
+        public bool isActive { get; set; }
     }
 }
