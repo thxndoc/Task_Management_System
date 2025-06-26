@@ -32,12 +32,12 @@ The system is built with a focus on **role-based access** and **tracking** for o
 
 ## ✅ Summary of Sprint Progress
 
-| Sprint | Focus | Key Deliverables |
+| Sprint No. | Focus | Key Deliverables |
 |------|-----|------|
-| **Sprint 1** | Discovery & Problem Identification | Problem brief, current process flow diagram |
-| **Sprint 2** | Requirements & Specification | User requirements &  specifications document including activity diagrams, functional and non-functional requirements, and wireframes |
-| **Sprint 3** | System Design & Data Architecture | ERD, database design document with sample SQL scripts |
-| **Sprint 4** | Studio Implementation | MVC project setup, database connection using EF Core, creation of data models, initial CRUD setup, testing local database creation |
+| **1** | Discovery & Problem Identification | Problem brief, current process flow diagram |
+| **2** | Requirements & Specification | User requirements &  specifications document including activity diagrams, functional and non-functional requirements, and wireframes |
+| **3** | System Design & Data Architecture | ERD, database design document with sample SQL scripts |
+| **4** | Studio Implementation | MVC project setup, database connection using EF Core, creation of data models, initial CRUD setup, testing local database creation |
 
 ---
 
