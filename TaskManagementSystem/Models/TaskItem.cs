@@ -1,6 +1,6 @@
 ﻿namespace TaskManagementSystem.Models
 {
-    public class Task
+    public class TaskItem
     {
         public int TaskId { get; set; }
         public int ProjectId { get; set; }
