@@ -9,11 +9,15 @@ namespace TaskManagementSystem.Data
            : base(options)
         {
         }
-
-        // Add models here, for example:
-       // public DbSet<User> Users { get; set; }
-       public DbSet<User> Users { get; set; }
+        // Add models here:
+       public DbSet<Attachment> Attachments { get; set; }
+       public DbSet<BugReport> BugReports { get; set; }
        public DbSet<Project> Projects { get; set; }
-
+       public DbSet<Role> Roles { get; set; }
+       public DbSet<SystemLog> SystemLogs { get; set; }
+       public DbSet<TaskHistory> TaskHistories { get; set; }
+       public DbSet<TestReport> TestReports { get; set; }
+       public DbSet<TimeTracking> TimeTrackings { get; set; }
+       public DbSet<User> Users { get; set; }
     }
 }
