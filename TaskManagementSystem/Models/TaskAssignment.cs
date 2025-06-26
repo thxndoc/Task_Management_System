@@ -8,6 +8,6 @@
         public DateTime AssignedDate { get; set; }
         public DateTime CompletedDate { get; set; }
         public string Notes { get; set; }
-        public bool isActive { get; set; } = true;
+        public bool isActive { get; set; }
     }
 }

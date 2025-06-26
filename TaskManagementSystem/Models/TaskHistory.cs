@@ -2,7 +2,7 @@
 {
     public class TaskHistory
     {
-        public int HistoryId { get; set; }
+        public int TaskHistoryId { get; set; }
         public int TaskId { get; set; }
         public int ChangedByUserId { get; set; }
         public string FieldChanged { get; set; }

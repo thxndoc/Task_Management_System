@@ -2,7 +2,7 @@
 {
     public class SystemLog
     {
-        public int LogId { get; set; }
+        public int SystemLogId { get; set; }
         public int UserId { get; set; }
         public string Action { get; set; }
         public string ResourceType { get; set; }
