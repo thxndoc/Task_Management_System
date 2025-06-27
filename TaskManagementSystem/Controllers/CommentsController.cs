@@ -29,5 +29,12 @@ namespace TaskManagementSystem.Controllers
             await _service.CreateAsync(comment);
             return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
         }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var comment = await _service.GetByIdAsync(id);
+            if (comment == null) return NotFound();
+            return View(comment);
+        }
     }
 }
