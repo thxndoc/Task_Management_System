@@ -18,5 +18,7 @@ namespace TaskManagementSystem.Controllers
             if (comment == null) return NotFound();
             return View(comment);
         }
+
+        public IActionResult Create(int taskId) => View(new Comment { TaskId = taskId });
     }
 }
