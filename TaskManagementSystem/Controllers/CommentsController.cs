@@ -20,5 +20,14 @@ namespace TaskManagementSystem.Controllers
         }
 
         public IActionResult Create(int taskId) => View(new Comment { TaskId = taskId });
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Comment comment)
+        {
+            if (!ModelState.IsValid) return View(comment);
+            await _service.CreateAsync(comment);
+            return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
+        }
     }
 }
