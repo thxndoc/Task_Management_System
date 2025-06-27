@@ -5,10 +5,10 @@ using TaskManagementSystem.Services;
 
 namespace TaskManagementSystem.Controllers
 {
-    public class CommentsController : Controller
+    public class TaskCommentsController : Controller
     {
-        private readonly ICommentService _service;
-        public CommentsController(ICommentService service) { _service = service; }
+        private readonly ITaskCommentService _service;
+        public TaskCommentsController(ITaskCommentService service) { _service = service; }
 
         public async Task<IActionResult> Index(int taskId) => View(await _service.GetAllByTaskIdAsync(taskId));
 
@@ -19,15 +19,15 @@ namespace TaskManagementSystem.Controllers
             return View(comment);
         }
 
-        public IActionResult Create(int taskId) => View(new Comment { TaskId = taskId });
+        public IActionResult Create(int taskId) => View(new TaskComment { TaskId = taskId, Comment = string.Empty });
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Comment comment)
+        public async Task<IActionResult> Create(TaskComment taskcomment)
         {
-            if (!ModelState.IsValid) return View(comment);
-            await _service.CreateAsync(comment);
-            return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
+            if (!ModelState.IsValid) return View(taskcomment);
+            await _service.CreateAsync(taskcomment);
+            return RedirectToAction(nameof(Index), new { taskId = taskcomment.TaskId });
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -39,11 +39,11 @@ namespace TaskManagementSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Comment comment)
+        public async Task<IActionResult> Edit(TaskComment taskcomment)
         {
-            if (!ModelState.IsValid) return View(comment);
-            await _service.UpdateAsync(comment);
-            return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
+            if (!ModelState.IsValid) return View(taskcomment);
+            await _service.UpdateAsync(taskcomment);
+            return RedirectToAction(nameof(Index), new { taskId = taskcomment.TaskId });
         }
 
         public async Task<IActionResult> Delete(int id)
