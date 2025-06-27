@@ -52,5 +52,15 @@ namespace TaskManagementSystem.Controllers
             if (comment == null) return NotFound();
             return View(comment);
         }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var comment = await _service.GetByIdAsync(id);
+            if (comment != null)
+                await _service.DeleteAsync(id);
+            return RedirectToAction(nameof(Index), new { taskId = comment?.TaskId });
+        }
     }
 }
