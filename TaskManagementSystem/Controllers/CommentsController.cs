@@ -36,5 +36,14 @@ namespace TaskManagementSystem.Controllers
             if (comment == null) return NotFound();
             return View(comment);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(Comment comment)
+        {
+            if (!ModelState.IsValid) return View(comment);
+            await _service.UpdateAsync(comment);
+            return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
+        }
     }
 }
