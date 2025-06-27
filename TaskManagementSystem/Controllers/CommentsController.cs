@@ -45,5 +45,12 @@ namespace TaskManagementSystem.Controllers
             await _service.UpdateAsync(comment);
             return RedirectToAction(nameof(Index), new { taskId = comment.TaskId });
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            var comment = await _service.GetByIdAsync(id);
+            if (comment == null) return NotFound();
+            return View(comment);
+        }
     }
 }
